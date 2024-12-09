@@ -1,0 +1,21 @@
+extends:
+  - react-app
+  - plugin:jest-dom/recommended
+  - plugin:testing-library/react
+  # Disable any conflicting formatting rules, and run Prettier for the source
+  # files that the linter is handling:
+  - plugin:prettier/recommended
+rules:
+  no-warning-comments:
+    # Don't care about To Do's but fail on Fix Me's; this only affects source
+    # files as handled by ESLint (so: not stylesheets, nor other files)
+    - error
+    - terms:
+        - FIXME
+      location: anywhere
+  testing-library/prefer-explicit-assert:
+    - error
+  testing-library/prefer-screen-queries:
+    - error
+  testing-library/prefer-wait-for:
+    - error
